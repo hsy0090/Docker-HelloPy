@@ -5,10 +5,8 @@ services:
     build: .
     ports:
       - "5000:5000"
-    volumes:
-      - hello-data:/data
-    environment:
-      NAME: Compose
+    depends_on:
+      - redis
 
-volumes:
-  hello-data:
+  redis:
+    image: redis:7
