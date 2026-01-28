@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - hello-data:/data
+    environment:
+      NAME: Compose
+
+volumes:
+  hello-data:
